@@ -6,6 +6,9 @@ let dlugosc = haslo.length
 let ile_skuch =0
 
 let haslo1 = ""
+if(haslo = "ADAM TO CWEL"){
+    alert("podales złe hasło")
+}
 
 for(let i = 0; i<dlugosc; i++){
     if(haslo.charAt(i)==" ") haslo1 += " "
