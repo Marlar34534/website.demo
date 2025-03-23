@@ -1,69 +1,138 @@
-body{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
     background-color: black;
     color: lightgray;
     font-size: 25px;
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: normal;
     font-weight: 700;
-}
-
-#pojemnik{
-    width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#plansza{
-    width: 900px;
-    margin-top: 50px;
-    margin-bottom: 50px;
     text-align: center;
-    font-size: 48px;
+    padding: 20px;
+}
+
+/* Główny pojemnik */
+#pojemnik {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Plansza z hasłem */
+#plansza {
+    width: 100%;
+    margin: 20px 0;
+    font-size: 3rem;
     min-height: 60px;
-}
-
-#szubienica{
-    float: left;
-    width: 450px;
     text-align: center;
-    min-height: 280px;
 }
 
-#alfabet{
-    float: left;
-    width: 450px;
+/* Kontener na szubienicę i alfabet */
+#gra {
+    display: flex;
+    flex-wrap: wrap; /* Zapobiega nachodzeniu */
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+/* Szubienica */
+#szubienica {
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    min-height: 280px;
 }
 
-.litera{
-    width: 30px;
-    height: 30px;
+/* Ustawienie obrazu wisielca */
+#szubienica img {
+    width: 100%;
+    max-width: 350px; /* Zapobiega zbyt dużemu obrazkowi */
+    height: auto;
+}
+
+/* Alfabet */
+#alfabet {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Na większych ekranach alfabet obok szubienicy */
+@media (min-width: 768px) {
+    #gra {
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 10px;
+    }
+
+    #szubienica, #alfabet {
+        width: 45%;
+        max-width: 400px;
+    }
+
+    #plansza {
+        font-size: 2.5rem;
+    }
+}
+
+/* Przyciski liter */
+.litera {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
     padding: 5px;
     margin: 5px;
     border: 1px solid gray;
     border-radius: 10px;
-    float: left;
     cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    transition: 0.3s;
 }
 
-.litera:hover{
-    background-color: #222222;
+.litera:hover {
+    background-color: #222;
     color: white;
     border: 1px solid white;
 }
 
-.reset{
-    
-    font-size: 48px;
+/* Reset gry */
+.reset {
+    font-size: 2rem;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
-.reset:hover{
+.reset:hover {
     color: white;
+}
+
+/* Dostosowanie na małych ekranach */
+@media (max-width: 480px) {
+    body {
+        font-size: 20px;
+    }
+
+    #plansza {
+        font-size: 2rem;
+    }
+
+    .litera {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 1rem;
+    }
 }
