@@ -9,7 +9,7 @@ let haslo1 = ""
 
 if (haslo.includes("ADAM")) {
     alert("Podałeś złe hasło");
-    location.reload(); // Odświeża stronę
+    location.reload();
 }
 
 for(let i = 0; i<dlugosc; i++){
