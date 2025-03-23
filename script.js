@@ -6,8 +6,10 @@ let dlugosc = haslo.length
 let ile_skuch =0
 
 let haslo1 = ""
-if(haslo = "ADAM TO CWEL"){
-    alert("podales złe hasło")
+
+if (haslo.includes("ADAM")) {
+    alert("Podałeś złe hasło");
+    location.reload(); // Odświeża stronę
 }
 
 for(let i = 0; i<dlugosc; i++){
